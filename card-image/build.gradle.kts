@@ -1,7 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    //id("maven-publish")
+    id("maven-publish")
 }
 
 android {
@@ -43,7 +43,7 @@ dependencies {
 
 publishing {
     publications {
-        register<MavenPublication>("release") {
+        register<MavenPublication>("maven") {
             groupId = "com.github.firdousakond"
             artifactId = "card-image-preview"
             version = "1.0"
