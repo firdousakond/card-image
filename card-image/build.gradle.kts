@@ -1,7 +1,7 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    id("maven-publish")
+    //id("maven-publish")
 }
 
 android {
@@ -41,13 +41,14 @@ dependencies {
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            create<MavenPublication> ("Maven"){
-                groupId = "com.github.firdousakond"
-                artifactId = "card-image-preview"
-                version = "1.0"
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.firdousakond"
+            artifactId = "card-image-preview"
+            version = "1.0"
+
+            afterEvaluate {
                 from(components["release"])
             }
         }
