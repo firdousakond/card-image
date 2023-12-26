@@ -29,26 +29,25 @@ fun CardImagePreview(
     image: Painter,
     description: String = "",
     contentDescription: String = "",
-    onImageClick: () -> Unit = {}
+    onImageClick: () -> Unit = {},
 ) {
-
     Box(
         modifier = modifier
             .aspectRatio(1f)
             .clip(RoundedCornerShape(15.dp))
             .shadow(15.dp, RoundedCornerShape(15.dp))
-            .clickable { onImageClick() }
+            .clickable { onImageClick() },
     ) {
         Image(
             painter = image,
             contentDescription = contentDescription,
             contentScale = ContentScale.Crop,
-            modifier = modifier.fillMaxSize()
-            )
+            modifier = modifier.fillMaxSize(),
+        )
         Text(
             text = description,
             style = MaterialTheme.typography.bodyMedium,
-            color =  Color.White,
+            color = Color.White,
             overflow = TextOverflow.Ellipsis,
             maxLines = 1,
             modifier = modifier.fillMaxWidth()
@@ -56,12 +55,12 @@ fun CardImagePreview(
                     Brush.verticalGradient(
                         listOf(
                             Color.Transparent,
-                            Color.Black
-                        )
-                    )
+                            Color.Black,
+                        ),
+                    ),
                 )
                 .align(Alignment.BottomStart)
-                .padding(8.dp)
+                .padding(8.dp),
         )
     }
 }

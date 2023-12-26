@@ -9,6 +9,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.mindvalley.card_image.CardImagePreview
 import com.mindvalley.cardimagelibrary.ui.theme.CardImageLibraryTheme
@@ -21,9 +22,12 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    color = MaterialTheme.colorScheme.background,
                 ) {
-
+                    CardImageLibraryTheme {
+                        CardImagePreview(image = painterResource(id = R.drawable.ic_launcher_background), description = "Card Image", contentDescription = "This is a sample card image") {
+                        }
+                    }
                 }
             }
         }
@@ -34,7 +38,7 @@ class MainActivity : ComponentActivity() {
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
-        modifier = modifier
+        modifier = modifier,
     )
 }
 
