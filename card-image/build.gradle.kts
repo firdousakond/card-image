@@ -1,10 +1,11 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("maven-publish")
 }
 
 android {
-    namespace = "com.firdous.cardimage"
+    namespace = "com.firdous.card-image"
     compileSdk = 33
 
     defaultConfig {
@@ -24,11 +25,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 
     composeOptions {
@@ -42,4 +43,21 @@ android {
 dependencies {
     implementation("androidx.compose.material3:material3")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            android.libraryVariants.all { variant ->
+                create(variant.name, MavenPublication::class) {
+                    from(components.findByName(variant.name))
+
+                    groupId = "com.github.firdousakond"
+                    artifactId = "card-image"
+                    version = "1.0.0"
+                }
+                return@all true
+            }
+        }
+    }
 }

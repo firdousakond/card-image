@@ -12,10 +12,11 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        mavenLocal()
         maven { url = URI("https://jitpack.io") }
     }
 }
 
 rootProject.name = "CardImageLibrary"
 include(":app")
-include(":cardimage")
+include(":card-image")
