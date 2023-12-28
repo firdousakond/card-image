@@ -66,6 +66,5 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
-//    implementation(project(":card-image"))
-    // implementation("com.github.firdousakond:cardimage:1.0")
+    implementation("com.github.firdousakond:cardimage:1.1")
 }

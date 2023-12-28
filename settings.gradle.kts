@@ -1,4 +1,3 @@
-import java.net.URI
 
 pluginManagement {
     repositories {
@@ -10,10 +9,10 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        mavenLocal()
         google()
         mavenCentral()
-        mavenLocal()
-        maven { url = URI("https://jitpack.io") }
+        maven(url = "https://jitpack.io")
     }
 }
 
