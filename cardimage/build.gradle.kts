@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.firdous.card-image"
+    namespace = "com.firdous.cardimage"
     compileSdk = 33
 
     defaultConfig {
@@ -53,7 +53,7 @@ afterEvaluate {
                     from(components.findByName(variant.name))
 
                     groupId = "com.github.firdousakond"
-                    artifactId = "card-image"
+                    artifactId = "cardimage"
                     version = "1.0.0"
                 }
                 return@all true

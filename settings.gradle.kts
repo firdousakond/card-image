@@ -19,4 +19,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "CardImageLibrary"
 include(":app")
-include(":card-image")
+include(":cardimage")
