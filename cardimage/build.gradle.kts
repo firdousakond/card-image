@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.firdous.card_image"
+    namespace = "com.firdous.cardimage"
     compileSdk = 33
 
     defaultConfig {
